@@ -24,4 +24,12 @@ func (c *CalculateFinalPrice) Execute(input OrderInput) (*OrderOutput, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	return &OrderOutput{
+		ID:         order.ID,
+		Price:      order.Price,
+		Tax:        order.Tax,
+		FinalPrice: order.FinalPrice,
+	}, nil
+
 }
